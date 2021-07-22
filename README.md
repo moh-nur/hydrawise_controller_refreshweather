@@ -1,7 +1,7 @@
 # hydrawise_controller_refreshweather
 Python script to set and unset your weather station for the Hydrawise irrigation controller. 
 
-This functionality is needed for free users so that the controller can retrieve updated observations which is no done automatically in the free tier.
+This functionality is needed for free users so that the controller can retrieve updated observations which is not done automatically in the free tier.
 
 ### How to use
 Set the below environment variables and run the script using crontab or a github action. If using a github action ensure you set the environments using githubs secrets.
