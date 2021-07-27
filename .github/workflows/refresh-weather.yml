@@ -1,7 +1,8 @@
-name: Refresh Hydrawise weather station hourly
+name: Refresh Hydrawise weather station
 
 on:
   schedule:
+    - cron: '30 3 * * *'
     - cron: '30 8 * * *'
   workflow_dispatch:
 
