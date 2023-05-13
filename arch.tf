@@ -134,7 +134,7 @@ resource "aws_iam_role_policy_attachment" "lambda_execution_role_attachment" {
 
 resource "aws_cloudwatch_event_rule" "lambda_event_rule" {
   name                = "lambda-event-rule"
-  schedule_expression = "cron(30 3,8 * * ? *)"
+  schedule_expression = "cron(30 3,8 * 5-9 ? *)"
 }
 
 resource "aws_cloudwatch_event_target" "lambda_event_target" {
