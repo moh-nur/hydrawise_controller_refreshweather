@@ -17,7 +17,7 @@ variable "runtime" {
 
 variable "output_path" {
   description = "Path to function's deployment package into local filesystem"
-  default = "lambda_function.zip"
+  default     = "lambda_function.zip"
 }
 
 variable "lambda_function_name" {
@@ -88,6 +88,7 @@ data "archive_file" "lambda_zip" {
 
 resource "aws_lambda_function" "python_lambda" {
   function_name    = var.lambda_function_name
+  timeout          = 60
   runtime          = var.runtime
   handler          = "lambda.lambda_handler"
   role             = aws_iam_role.lambda_execution_role.arn
