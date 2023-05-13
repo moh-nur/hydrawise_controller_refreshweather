@@ -89,7 +89,7 @@ data "archive_file" "lambda_zip" {
 resource "aws_lambda_function" "python_lambda" {
   function_name    = var.lambda_function_name
   runtime          = var.runtime
-  handler          = "lambda_function.lambda_handler"
+  handler          = "lambda.lambda_handler"
   role             = aws_iam_role.lambda_execution_role.arn
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
   filename         = data.archive_file.lambda_zip.output_path
