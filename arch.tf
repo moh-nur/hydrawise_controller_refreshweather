@@ -59,9 +59,7 @@ provider "aws" {
 
 resource "null_resource" "lambda_build" {
   triggers = {
-    handler      = base64sha256(file("src/lambda.py"))
-    requirements = base64sha256(file("src/requirements.txt"))
-    build        = base64sha256(file("src/build.sh"))
+    always_run = "${timestamp()}"
   }
 
   provisioner "local-exec" {
